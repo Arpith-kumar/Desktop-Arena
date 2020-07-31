@@ -1,0 +1,265 @@
+/* Google Font import  */
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+*{
+    /* fullscreen */
+    padding: 0;
+    margin: 0;
+    /* The box-sizing property allows us to include the padding and border
+    in an element's total width and heigh */
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+body {
+    /* Google fonts */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.nav-bar {
+    position: fixed;
+    display: block;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+    /* background-color: #37474F; */
+    /* The overflow property specifies whether to clip the content or
+    to add scrollbars when the content of an element is too big to fit in the specified area. */
+    /* auto - Similar to scroll, but it adds scrollbars only when necessary */
+    overflow: auto;
+    /* Shadow */
+    box-shadow: 0 8px 6px -6px #999;
+
+    /* opacity: 0.9; */
+}
+
+.nav-bar a {
+    padding-top: 0.85%;
+    padding-bottom: 0.85%;
+    /* The float property is used for positioning and formatting content
+    e.g. let an image float left to the text in a container. */
+    float: left;
+    color: #7f7f7f;
+    /* Removes underline from a tag links */
+    text-decoration: none;
+    font-size: 17px;
+    /* Width of each link */
+    width: 20%;
+    /* Align text in center within each link area */
+    text-align: center;
+    /* Bold text */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+/* Scrollbar Styling */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#title{
+    /* height: 100%; */
+    width: 100%;
+    color: #7f7f7f;
+    font-weight: bold;
+    font-size: 350%;
+    position: absolute;
+    text-align: center;
+    top: 42%;
+}
+
+#moto{
+    /* height: 100%; */
+    width: 100%;
+    color: #7f7f7f;
+    font-weight: bold;
+    font-size: 120%;
+    position: absolute;
+    text-align: center;
+    top: 49%;
+}
+
+/* Get started button */
+
+#gsButton {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 53%;
+    margin-left: -97.75px;
+}
+
+#getStarted {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: absolute;
+    text-align: center;
+    top: 53%;
+    font-size: 20px;
+    font-weight: bold;
+    /* margin-left: 44%; */
+
+    padding: 16px 38px;
+    text-decoration: none;
+    /* transition-duration: 0.4s; */
+    cursor: pointer;
+    background-color: Transparent;
+    outline: none;
+    border: 2px solid #7f7f7f;
+    color: #7f7f7f;
+    border-radius: 10px;
+    width: 195.5px;
+    height: 60px;
+}
+
+#getStarted span {
+    cursor: pointer;
+    /* display: inline-block; */
+    position: relative;
+    transition: 0.5s;
+}
+
+#getStarted span:after {
+    content: '\00bb';
+    font-weight: bold;
+    color: #7f7f7f;
+    position: absolute;
+    opacity: 0;
+    /* top: 0; */
+    right: -30px;
+    transition: 0.5s;
+}
+
+#getStarted:hover span {
+    padding-right: 26px;
+    color: white;
+}
+
+#getStarted:hover span:after {
+    opacity: 1;
+    right: 5px;
+}
+
+#getStarted:hover {
+    background-color: #d1cfcf;
+    color: white;
+}
+
+/* Loading animations */
+#main {
+    display: none;
+    opacity: 1;
+    /* ease - Specifies an animation with a slow start, then fast, then end slowly (this is default) */
+    /* animation-name, animation-duration, animation-timing-function */
+    animation: fadeIn 5s ease;
+}
+
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* Navbar Underline */
+
+.nav-bar a {
+    position: relative;
+}
+
+.nav-bar a:hover{
+    color: #272727;
+    padding-right: 50px;
+}
+
+/*The ::before pseudo-element can be used to insert some content before the content of an element.*/
+/*The scaleX() CSS function defines a transformation that resizes an element along the x-axis (horizontally)*/
+.nav-bar a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #7f7f7f;
+    transform: scaleX(0);
+    /* transition: width 2s, height 2s, transform 2s; */
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-bar a:hover:before {
+    transform: scaleX(1);
+}
+
+#page-body {
+    margin-top: 2.5%;
+}
+
+.warning-msg{
+    display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 800px) {
+    #main *{
+        display: none;
+    }
+
+    .warning-msg{
+        display: block;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10%;
+        background-color: black;
+    }
+    body {
+        background-color: black;
+    }
+}
+
+
+@media only screen and (max-width: 800px), screen and (max-height: 600px) {
+    #main *{
+        display: none;
+    }
+    .warning-msg{
+        display: block;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10%;
+        background-color: black;
+    }
+    body {
+        background-color: black;
+    }
+
+}
